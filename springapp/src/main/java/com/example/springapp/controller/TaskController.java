@@ -32,7 +32,7 @@ public class TaskController {
     }
 
     @PutMapping("/task/{id}/update")
-    public ResponseEntity<?> updateTask(@PathVariable int id, @RequestBody Task task, Authentication authentication) {
+    public ResponseEntity<?> updateTask(@PathVariable String id, @RequestBody Task task, Authentication authentication) {
         String username=authentication.getName();
         User user = userRepo.findByEmail(username).get();
         task.setAddedBy(user);
@@ -40,9 +40,16 @@ public class TaskController {
     }
 
     @DeleteMapping("/task/{id}/delete")
-    public ResponseEntity<?> deleteTask(@PathVariable int id){
-        taskRepo.deleteTaskById(id);
+    public ResponseEntity<?> deleteTask(@PathVariable String id){
+        taskRepo.deleteById(id);
         return new ResponseEntity<>("Task deleted successfully!", HttpStatus.OK);
+    }
+
+    @GetMapping("/allTasks")
+    public ResponseEntity<?> getAllTasks(Authentication authentication){
+        String username=authentication.getName();
+        String id=userRepo.findByEmail(username).get().getId();
+        return new ResponseEntity<>(taskService.getTasksByUser(id), HttpStatus.OK);
     }
 
 }

@@ -8,6 +8,8 @@ import com.example.springapp.database.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -20,47 +22,23 @@ public class TaskService {
 
     //POST
     public Task saveTask(Task task) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a");
+        String formatDateTime = currentDateTime.format(format1);
+        task.setTimeAdded(formatDateTime);
         return taskRepo.save(task);
     }
-    public Task updateTask(Task task, int id){
+    public Task updateTask(Task task, String id){
         //Task old=taskRepo.findById(id).get();
         task.setId(id);
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm a");
+        String formatDateTime = currentDateTime.format(format1);
+        task.setTimeAdded(formatDateTime);
         return taskRepo.save(task);
     }
-
-    //Optional!
-    /*public List<Course> saveCourses(List<Course> courses) {
-        return courseRepository.saveAll(courses);
+    public List<Task> getTasksByUser(String id){
+        return taskRepo.findTasksByAddedBy_Id(id);
     }
-
-    //GET
-    public List<Course> getCourses() {
-        return courseRepository.findAll();
-    }
-    public Course getCourseById(int id) {
-        return courseRepository.findById(id).orElse(null);
-    }
-    public Course getCourseByName(String name) {
-        return courseRepository.findByName(name);
-    }
-    public List<Course> getCoursesForUser(String username) {
-        return courseRepository.findAllByUsername(username);
-    }
-
-    //PUT
-    public Course updateCourse(Course course) {
-        System.out.println("updates");
-        Course existing_course = courseRepository.findById(course.getId()).orElse(null);
-        existing_course.setName(course.getName());
-        existing_course.setDescription(course.getDescription());
-        existing_course.setStatus(course.getStatus());
-        return courseRepository.save(existing_course);
-    }
-
-    //DELETE
-    public String deleteCourse(int id) {
-        courseRepository.deleteById(id);
-        return id + " id -> course removed/completed";
-    }*/
 
 }

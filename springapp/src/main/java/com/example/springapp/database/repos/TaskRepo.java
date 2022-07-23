@@ -5,9 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface TaskRepo extends JpaRepository<Task, String> {
-    @Transactional
-    void deleteTaskById(int id);
+
+    List<Task> findTasksByAddedBy_Id(String id);
 }
