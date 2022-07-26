@@ -1,6 +1,7 @@
 package com.example.springapp.controller;
 
 import com.example.springapp.database.entities.User;
+import com.example.springapp.database.model.SignupResponse;
 import com.example.springapp.database.model.UserModel;
 import com.example.springapp.exceptions.EmailTakenException;
 import com.example.springapp.security.JwtManager;
@@ -58,29 +59,4 @@ public class AuthController {
         return new ResponseEntity<>("Token Valid", HttpStatus.OK);
     }
 
-    static class SignupResponse {
-        private String accessToken;
-        private UserModel user;
-
-        public SignupResponse(String accessToken, UserModel user) {
-            this.accessToken = accessToken;
-            this.user = user;
-        }
-
-        public String getAccessToken() {
-            return accessToken;
-        }
-
-        public void setAccessToken(String accessToken) {
-            this.accessToken = accessToken;
-        }
-
-        public UserModel getUser() {
-            return user;
-        }
-
-        public void setUser(UserModel user) {
-            this.user = user;
-        }
-    }
 }

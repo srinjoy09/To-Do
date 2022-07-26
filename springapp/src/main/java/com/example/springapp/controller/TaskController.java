@@ -19,8 +19,6 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
     @Autowired
-    private TaskRepo taskRepo;
-    @Autowired
     private UserRepo userRepo;
     //POST
     @PostMapping("/addTask")
@@ -41,7 +39,7 @@ public class TaskController {
 
     @DeleteMapping("/task/{id}/delete")
     public ResponseEntity<?> deleteTask(@PathVariable String id){
-        taskRepo.deleteById(id);
+        taskService.deleteTask(id);
         return new ResponseEntity<>("Task deleted successfully!", HttpStatus.OK);
     }
 

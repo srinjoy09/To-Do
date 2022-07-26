@@ -42,13 +42,14 @@ public class UserController {
 
     @PostMapping(path = "/user/add")
     public ResponseEntity<?> addUser(@RequestBody User user){
-        return new ResponseEntity<User>(userRepo.save(user), HttpStatus.CREATED);
+        userService.addUser(user);
+        return new ResponseEntity<>("User added successfully!", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/user/{id}/delete")
     public ResponseEntity<?> deleteUser(@PathVariable("id") String userId){
         try {
-            userRepo.deleteById(userId);
+            userService.deleteUser(userId);
             return new ResponseEntity<String>("User Deleted Successfully", HttpStatus.OK);
         } catch (Exception e){
             return new ResponseEntity<String>("Something went wrong on our side. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);

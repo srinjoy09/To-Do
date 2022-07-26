@@ -14,6 +14,10 @@ public class UserService {
     @Autowired
     public UserRepo userRepo;
 
+    public void addUser(User user) {
+        userRepo.save(user);
+    }
+
     public List<User> getUsers() {
         return userRepo.findAll();
     }
@@ -22,5 +26,8 @@ public class UserService {
         Optional<User> userOptional = userRepo.findById(id);
         userOptional.orElseThrow(UserNotFoundException::new);
         return userOptional.get();
+    }
+    public void deleteUser(String userId) {
+        userRepo.deleteById(userId);
     }
 }
