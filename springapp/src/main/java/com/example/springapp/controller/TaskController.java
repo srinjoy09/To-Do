@@ -13,6 +13,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.ws.Response;
+
 @RestController
 @RequestMapping("/user")
 public class TaskController {
@@ -48,6 +50,24 @@ public class TaskController {
         String username=authentication.getName();
         String id=userRepo.findByEmail(username).get().getId();
         return new ResponseEntity<>(taskService.getTasksByUser(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/task/{id}")
+    public ResponseEntity<?> findTask(@PathVariable String id, Authentication authentication){
+        String username= authentication.getName();
+        String userId=userRepo.findByEmail(username).get().getId();
+        Task task= taskService.findTask(id, userId);
+        if(task != null)
+            return new ResponseEntity<>(task, HttpStatus.OK);
+        else
+            return new ResponseEntity<>("Task not available", HttpStatus.OK);
+    }
+
+    @GetMapping("/sortTasks")
+    public ResponseEntity<?> sortAllTasks(Authentication authentication){
+        String username=authentication.getName();
+        String id=userRepo.findByEmail(username).get().getId();
+        return new ResponseEntity<>(taskService.sortTask(id), HttpStatus.OK);
     }
 
 }
