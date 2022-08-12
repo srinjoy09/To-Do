@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import isAuthenticated from './Helper/isAuthenticated';
+//import Home from './Pages/Home';
+import Login from './Pages/login';
+import SignUp from './Pages/signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+//import Profile from './Pages/profile';
+//import AdminHome from './admin/home';
+//import ProtectedRoutes from './Components/ProtectedRoutes';
+//import ReactNotification from 'react-notifications-component';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route
+                    exact path="/"
+                    render={() => {
+                        return (
+                            !isAuthenticated() ?
+                                <Navigate to="/home" replace={true} /> :
+                                <Navigate to="/login" replace={true} />
+                        )
+                    }}
+                />
+                <Route exact path="/login" element={<Login />}></Route>
+                <Route exact path="/signup" element={<SignUp />}></Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

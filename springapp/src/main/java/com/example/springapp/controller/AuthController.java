@@ -38,14 +38,14 @@ public class AuthController {
             User user = authService.saveUser(userModel);
             Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
-            String accessToken = jwtManager.generateAccessToken(user.getEmail(), request.getRequestURL().toString(), authorities);
+            String access_token = jwtManager.generateAccessToken(user.getEmail(), request.getRequestURL().toString(), authorities);
             UserModel userResponseDetails = new UserModel(
                     user.getEmail(),
                     user.getUserName(),
                     null,
                     user.getRole()
             );
-            return new ResponseEntity<>(new SignupResponse(accessToken, userResponseDetails), HttpStatus.CREATED);
+            return new ResponseEntity<>(new SignupResponse(access_token, userResponseDetails), HttpStatus.CREATED);
         } catch (EmailTakenException e1) {
             return new ResponseEntity<String>("Email already taken. Try another one.", HttpStatus.FORBIDDEN);
         } catch (Exception e) {

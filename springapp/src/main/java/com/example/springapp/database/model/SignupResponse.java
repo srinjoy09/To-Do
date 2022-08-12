@@ -1,20 +1,20 @@
 package com.example.springapp.database.model;
 
 public class SignupResponse {
-    private String accessToken;
+    private String access_token;
     private UserModel user;
 
-    public SignupResponse(String accessToken, UserModel user) {
-        this.accessToken = accessToken;
+    public SignupResponse(String access_token, UserModel user) {
+        this.access_token = access_token;
         this.user = user;
     }
 
     public String getAccessToken() {
-        return accessToken;
+        return access_token;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setAccessToken(String access_token) {
+        this.access_token = access_token;
     }
 
     public UserModel getUser() {
