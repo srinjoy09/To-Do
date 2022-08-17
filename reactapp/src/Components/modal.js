@@ -49,27 +49,6 @@ const ModalComponent=(props)=>{
                         <input type="text" value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})} className="form-control ps-5 py-3 shadow-none" name="username" placeholder="Enter Status" />
                     </div>
                 </div>
-                {/*<div className="form-group mt-3">
-                    <label className="control-label mplus text-muted mb-2" style={{fontSize:'13px'}} >
-                        Mobile No.
-                    </label>
-                    <div>
-                        < HiDeviceMobile className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
-                        <input type="number" value={userData.mobileNum} onChange={(e)=>setUserData({...userData,mobileNum:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Mobile no." />
-                    </div>
-                </div>*/}
-                {/*{
-                    props.selected==="add"&&
-                    <div className="form-group mt-3">
-                        <label className="control-label mplus text-muted mb-2" style={{fontSize:'13px'}} >
-                            Password
-                        </label>
-                        <div>
-                            < AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
-                            <input type="password" value={userData.password} onChange={(e)=>setUserData({...userData,password:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Password..." />
-                        </div>
-                    </div>
-                }*/}
                 <button type="submit" className="btn py-3 w-100 mt-4 text-white" style={{background:'#188AFA'}}>{props.selected==="edit"?'Update':'Add'}</button>
             </form>
         </Modal>
