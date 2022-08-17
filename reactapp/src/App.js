@@ -6,7 +6,7 @@ import SignUp from './Pages/signup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 //import Profile from './Pages/profile';
-//import AdminHome from './admin/home';
+import Home from './Pages/home';
 //import ProtectedRoutes from './Components/ProtectedRoutes';
 //import ReactNotification from 'react-notifications-component';
 
@@ -26,6 +26,7 @@ function App() {
                 />
                 <Route exact path="/login" element={<Login />}></Route>
                 <Route exact path="/signup" element={<SignUp />}></Route>
+                <Route exact path="/home" element={<Home />}></Route>
             </Routes>
         </Router>
     );

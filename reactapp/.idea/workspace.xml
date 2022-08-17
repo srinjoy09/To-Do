@@ -2,48 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="528226bc-1381-4a0c-b51c-2a53eee96345" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backupapp/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/reactapp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Notification.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ProtectedRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Helper/isAuthenticated.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/loader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/signin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpages/CSS/login-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpages/JS/login-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpages/JS/view-tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpages/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpages/viewTasks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,21 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/Virtusa Training/Biraj Das/To-Do/reactapp&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Programming/Virtusa Training/Biraj Das/To-Do/reactapp",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -110,6 +76,7 @@
       <workItem from="1658720705920" duration="679000" />
       <workItem from="1658889082025" duration="3169000" />
       <workItem from="1658892284352" duration="1419000" />
+      <workItem from="1660705396750" duration="6911000" />
     </task>
     <servers />
   </component>
