@@ -1,11 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-/*import { FaUserCircle } from "react-icons/fa";
-import { AiOutlineLock } from "react-icons/ai";
-import {HiOutlineMail,HiDeviceMobile } from "react-icons/hi";*/
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const ModalComponent=(props)=>{
     const [taskData,setTaskData]=useState({
@@ -46,7 +41,16 @@ const ModalComponent=(props)=>{
                         Status
                     </label>
                     <div>
-                        <input type="text" value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})} className="form-control ps-5 py-3 shadow-none" name="username" placeholder="Enter Status" required/>
+
+                        {/*<select value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})}>
+                            <option value="Pending">Pending</option>
+                            <option value="Completed">Completed</option>
+                        </select>*/}
+                        <input list="status" value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})}/>
+                        <datalist id="status">
+                            <option value="Pending">Pending</option>
+                            <option value="Completed">Completed</option>
+                        </datalist>
                     </div>
                 </div>
                 <button type="submit" className="btn py-3 w-100 mt-4 text-white" style={{background:'#188AFA'}}>{props.selected==="edit"?'Update':'Add'}</button>

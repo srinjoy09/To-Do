@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import Logo from '../Components/logo';
 import '../css/signup.css';
 import { FaUserCircle } from "react-icons/fa";
-import {HiOutlineMail,HiDeviceMobile } from "react-icons/hi";
+import {HiOutlineMail} from "react-icons/hi";
 import { AiOutlineLock } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import {ReactNotifications} from 'react-notifications-component';

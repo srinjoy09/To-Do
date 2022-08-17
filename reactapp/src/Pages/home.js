@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import Logo from '../Components/logo';
-import {FaUserEdit ,FaUserPlus} from 'react-icons/fa'
+import {FaUserEdit} from 'react-icons/fa'
 import {HiUserRemove} from 'react-icons/hi';
 import ModalComponent from '../Components/modal';
 import Loader from '../Components/loader';
