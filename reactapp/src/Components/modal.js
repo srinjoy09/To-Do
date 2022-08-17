@@ -30,7 +30,7 @@ const ModalComponent=(props)=>{
                         Name
                     </label>
                     <div>
-                        <input type="text" value={taskData.name} onChange={(e)=>setTaskData({...taskData,name:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Name" />
+                        <input type="text" value={taskData.name} onChange={(e)=>setTaskData({...taskData,name:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Name" required />
                     </div>
                 </div>
                 <div className="form-group mt-3">
@@ -38,7 +38,7 @@ const ModalComponent=(props)=>{
                         Description
                     </label>
                     <div>
-                        <input type="text" value={taskData.description} onChange={(e)=>setTaskData({...taskData,description:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Description" />
+                        <input type="text" value={taskData.description} onChange={(e)=>setTaskData({...taskData,description:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter Description" required/>
                     </div>
                 </div>
                 <div className="form-group mt-3">
@@ -46,7 +46,7 @@ const ModalComponent=(props)=>{
                         Status
                     </label>
                     <div>
-                        <input type="text" value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})} className="form-control ps-5 py-3 shadow-none" name="username" placeholder="Enter Status" />
+                        <input type="text" value={taskData.status} onChange={(e)=>setTaskData({...taskData,status:e.target.value})} className="form-control ps-5 py-3 shadow-none" name="username" placeholder="Enter Status" required/>
                     </div>
                 </div>
                 <button type="submit" className="btn py-3 w-100 mt-4 text-white" style={{background:'#188AFA'}}>{props.selected==="edit"?'Update':'Add'}</button>

@@ -40,7 +40,10 @@ class Home extends Component{
         this.setState({...this.state,showModal:!this.state.showModal,selectedUser:{},selectedType:'',heading:''})
     }
 
-
+    logout = () => {
+        const cookie=new Cookies();
+        cookie.set('access_token'," ", { path: '/' });
+    };
 
     //////////GetUsers/////////////////////
     GetTask=()=>{
@@ -271,7 +274,10 @@ class Home extends Component{
                                             </table>
                                         </div>
                                         <div className="mt-3 ">
-                                            <Link to="/login" style={{textDecoration:'none',fontSize:'12px'}}>Logout</Link>
+                                            {/*<button onClick={()=>this.logout()} style={{cursor:'pointer'}} href="/login">Log Out</button>*/}
+                                            <button style={{cursor:'pointer'}}>
+                                            <Link to="/login" style={{textDecoration:'none',fontSize:'12px'}} onClick={()=>this.logout()}>Log Out</Link>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

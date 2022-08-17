@@ -129,9 +129,8 @@ class SignUp extends Component {
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <div className="form-group mt-4">
+                                    <div className="row mx-0 px-0 mt-4">
                                         <label className="control-label mplus text-muted mb-2" style={{fontSize:'13px'}} >
                                             Password
                                         </label>

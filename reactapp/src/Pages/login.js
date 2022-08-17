@@ -119,7 +119,6 @@ class Login extends Component {
                                     </div>
                                     <div className="mt-3 ">
                                         <Link to="/signup" style={{textDecoration:'none',fontSize:'12px'}}>Create a new account</Link>
-                                        <Link to="/" className="float-end mt-1" style={{textDecoration:'none',fontSize:'12px'}}>Forgot password?</Link>
                                     </div>
                                     <button type="submit" className="btn py-3 w-100 mt-4 text-white" style={{background:'#188AFA'}}>Sign In</button>
                                 </form>
