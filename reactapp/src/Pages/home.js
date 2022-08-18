@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 //import Logo from '../Components/logo';
-import {FaUserEdit} from 'react-icons/fa'
-import {HiUserRemove} from 'react-icons/hi';
 import ModalComponent from '../Components/modal';
 import Loader from '../Components/loader';
 import axios from 'axios';
@@ -10,6 +8,7 @@ import {ReactNotifications} from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import {Notification} from '../Components/Notification'
 import {Link} from "react-router-dom";
+import { MdAddTask, MdBuild, MdDeleteForever, MdSwapVert} from "react-icons/md";
 
 class Home extends Component{
 
@@ -74,8 +73,36 @@ class Home extends Component{
             .catch(err=>window.location="/login")
     }
 
+    //////////Sort Tasks///////////
+    SortTasks=()=>{
+        const cookie=new Cookies();
+        axios({
+            method:'GET',
+            url:'http://localhost:8080/user/sortTasks',
+            headers:{
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json',
+                //'Access-Control-Allow-Origin': '*',
+                'Authorization':`Bearer ${cookie.get('access_token')}`
+            }
+        })
+            .then(res=>{
 
-    //////////AddUsers///////////
+                if(res.status===200){
+                    this.setState({
+                        ...this.state,
+                        tasks:res.data,
+                        Loading:false
+                    })
+                }
+                else{
+                    window.location="/login"
+                }
+            })
+            .catch(err=>window.location="/login")
+    }
+
+    //////////AddTasks///////////
 
     AddTasks=(taskData)=>{
         const cookie=new Cookies();
@@ -123,7 +150,7 @@ class Home extends Component{
             }))
     }
 
-    ////Edit User//////
+    ////Edit Task//////
 
      EditTask=(taskData)=>{
          const cookie=new Cookies();
@@ -173,7 +200,7 @@ class Home extends Component{
              })
      }
 
-    ///Delete User/////
+    ///Delete Task/////
 
     DeleteUser=(id)=>{
         const cookie=new Cookies();
@@ -233,15 +260,21 @@ class Home extends Component{
                             <ModalComponent AddTasks={this.AddTasks} EditTask={this.EditTask} Data={this.state.selectedTask} selected={this.state.selectedType} heading={this.state.heading} closeModal={this.closeModal} showModal={this.state.showModal} setModal={this.SetModal}/>
 
                             <ReactNotifications isMobile='true' breakpoint='700px'/>
-                            <div className='container-fluid mt-4'>
-                                <div className='d-flex row'>
+                            <div className='container-fluid mt-4' style={{backgroundImage:'linear-gradient(to bottom right, #CDEFFE, #EAF6FE)'}}>
+                                <div className='d-flex row' style={{height:'100vh'}}>
+                                    <br/>
                                     <div className='col-3 text-center'>
                                         <button type="button" onClick={()=>this.SetModal({
                                             name:'',
                                             description:'',
                                             status:''
-                                        },'add','Add Task')} className="btn btn-outline-primary">Add Task</button>
+                                        },'add','Add Task')} className="btn btn-outline-primary">Add Task  <MdAddTask /></button>
                                     </div>
+                                    <br/>
+                                    <div className='col-3 text-center'>
+                                        <button type="button" onClick={()=>this.SortTasks()} className="btn btn-outline-primary">Sort Task (Date Added)  <MdSwapVert /></button>
+                                    </div>
+                                    <br/>
                                     <div className='container'>
                                         <div style={{background:'#F3F3F3'}} className='mt-3 rounded'>
                                             <table class="table">
@@ -264,9 +297,9 @@ class Home extends Component{
                                                             <td>{task.status}</td>
                                                             <td>{task.timeAdded}</td>
 
-                                                            <td><FaUserEdit onClick={()=>this.SetModal(task,'edit','Edit Task')} style={{cursor:'pointer'}}/></td>
+                                                            <td><MdBuild onClick={()=>this.SetModal(task,'edit','Edit Task')} style={{cursor:'pointer'}}/></td>
 
-                                                            <td><HiUserRemove onClick={()=>this.DeleteUser(task.id)} style={{cursor:'pointer'}}/></td>
+                                                            <td><MdDeleteForever onClick={()=>this.DeleteUser(task.id)} style={{cursor:'pointer'}}/></td>
                                                         </tr>
                                                     )
                                                 }

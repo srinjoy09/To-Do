@@ -41,7 +41,12 @@ public class TaskService {
         return taskRepo.save(task);
     }
     public List<Task> getTasksByUser(String id){
-        return taskRepo.findTasksByAddedBy_Id(id);
+        List<Task> tasks=taskRepo.findTasksByAddedBy_Id(id);
+        Collections.sort(tasks, new Comparator<Task>() {public int compare(Task o1, Task o2) {
+            return o1.getTimeAdded().compareTo(o2.getTimeAdded());}});
+        Collections.sort(tasks, new Comparator<Task>() {public int compare(Task o1, Task o2) {
+                return o1.getStatus().length()-o2.getStatus().length();}});
+        return tasks;
     }
 
     public void deleteTask(String taskId){
