@@ -40,8 +40,11 @@ class Home extends Component{
     }
 
     logout = () => {
+        this.setState({...this.state,Loading:false});
         const cookie=new Cookies();
-        cookie.set('access_token'," ", { path: '/' });
+        cookie.set('access_token',"", { path: '/' });
+        cookie.set('userName', "", { path: '/' });
+        cookie.set('email', "", { path: '/' });
     };
 
     //////////GetUsers/////////////////////
@@ -283,7 +286,7 @@ class Home extends Component{
                                                     <th scope="col">Task Name</th>
                                                     <th scope="col">Description</th>
                                                     <th scope="col">Status</th>
-                                                    <th scope="col">Time Added</th>
+                                                    <th scope="col">Time Added/Updated</th>
                                                     <th scope="col">Edit</th>
                                                     <th scope="col">Delete</th>
                                                 </tr>
