@@ -9,6 +9,7 @@ import 'react-notifications-component/dist/theme.css';
 import {Notification} from '../Components/Notification'
 import {Link} from "react-router-dom";
 import { MdAddTask, MdBuild, MdDeleteForever, MdSwapVert} from "react-icons/md";
+import Footer from "../Components/footer";
 
 class Home extends Component{
 
@@ -280,7 +281,7 @@ class Home extends Component{
                                     <br/>
                                     <div className='container'>
                                         <div style={{background:'#F3F3F3'}} className='mt-3 rounded'>
-                                            <table class="table">
+                                            <table className="table">
                                                 <thead>
                                                 <tr>
                                                     <th scope="col">Task Name</th>
@@ -318,6 +319,7 @@ class Home extends Component{
                                     </div>
                                 </div>
                             </div>
+                            <Footer/>
                         </>
                 }
             </>
