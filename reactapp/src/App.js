@@ -4,13 +4,14 @@ import SignUp from './Pages/signup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {Component} from "react";
 import Home from './Pages/home';
+import LandingPage from "./Pages/landingpage";
 
 class App extends Component {
     render() {
         return (
             <Router>
                 <Routes>
-                    <Route exact path="/" element={<Login/>}></Route>
+                    <Route exact path="/" element={<LandingPage/>}></Route>
                     <Route exact path="/login" element={<Login/>}></Route>
                     <Route exact path="/signup" element={<SignUp/>}></Route>
                     <Route exact path="/home" element={<Home/>}></Route>

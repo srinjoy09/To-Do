@@ -1,0 +1,23 @@
+.NotLoggedIcon{
+
+    background: none;
+    border: none;
+    outline: none;
+
+    position: center;
+    /*top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+    font-size: 5em;
+    font-weight: 400;
+}
+
+
+.loginButton{
+    top: 55%;
+    margin-right: 4px;
+}
+.registerButton{
+    top: 70%;
+}
