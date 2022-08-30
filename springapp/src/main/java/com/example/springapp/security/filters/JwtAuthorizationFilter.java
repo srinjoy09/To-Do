@@ -46,7 +46,6 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                 try {
                     String token = authorizationHeader.substring(jwtManager.getTokenPrefix().length());
                     JWTVerifier verifier = JWT.require(jwtManager.getAlgorithm()).build();
-                    System.out.println("here");
                     DecodedJWT decodedJWT= verifier.verify(token);
                     String email = decodedJWT.getSubject();
                     String[] roles = decodedJWT.getClaim("roles").asArray(String.class);
