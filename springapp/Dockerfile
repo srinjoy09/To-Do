@@ -1,5 +1,3 @@
-FROM ibmjava:jre
-ENV APP_HOME=/usr/app/
-WORKDIR $APP_HOME
+FROM eclipse-temurin
 COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","app.jar","--spring.profiles.active=docker"]
