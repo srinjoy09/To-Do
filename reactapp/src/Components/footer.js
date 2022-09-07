@@ -1,16 +1,27 @@
 import React from "react";
+import {
+    Box,
+    Container,
+    Row,
+    Column,
+    FooterLink,
+    Heading,
+} from "./footerelements";
 
-function Footer() {
+const Footer = () => {
     return (
-        <div className="footer">
-            <footer className="py-5 bg-dark fixed-bottom">
-                <div className="container">
-                    <p className="m-0 text-center text-white">
-                        Copyright &copy; ToDo
-                    </p>
-                </div>
-            </footer>
-        </div>
+        <Box>
+            <Container>
+                <Row>
+                    <Column>
+                        <Heading>About Us</Heading>
+                        <FooterLink href="#">Aim</FooterLink>
+                        <FooterLink href="#">Vision</FooterLink>
+                        <FooterLink href="#">Testimonials</FooterLink>
+                    </Column>
+                </Row>
+            </Container>
+        </Box>
     );
-}
+};
 export default Footer;

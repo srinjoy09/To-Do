@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import Logo from '../Components/logo';
 import ModalComponent from '../Components/modal';
 import Loader from '../Components/loader';
 import axios from 'axios';
@@ -7,9 +6,8 @@ import Cookies from 'universal-cookie';
 import {ReactNotifications} from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import {Notification} from '../Components/Notification'
-import {Link} from "react-router-dom";
 import { MdAddTask, MdBuild, MdDeleteForever, MdSwapVert} from "react-icons/md";
-import Footer from "../Components/footer";
+//import Footer from "../Components/footer";
 
 class Home extends Component{
 
@@ -40,20 +38,12 @@ class Home extends Component{
         this.setState({...this.state,showModal:!this.state.showModal,selectedUser:{},selectedType:'',heading:''})
     }
 
-    logout = () => {
-        this.setState({...this.state,Loading:false});
-        const cookie=new Cookies();
-        cookie.set('access_token',"", { path: '/' });
-        cookie.set('userName', "", { path: '/' });
-        cookie.set('email', "", { path: '/' });
-    };
-
     //////////GetUsers/////////////////////
     GetTask=()=>{
         const cookie=new Cookies();
         axios({
             method:'GET',
-            url:'http://localhost:8080/user/allTasks',
+            url:'http://localhost:5000/user/allTasks',
             headers:{
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json',
@@ -82,7 +72,7 @@ class Home extends Component{
         const cookie=new Cookies();
         axios({
             method:'GET',
-            url:'http://localhost:8080/user/sortTasks',
+            url:'http://localhost:5000/user/sortTasks',
             headers:{
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json',
@@ -118,7 +108,7 @@ class Home extends Component{
         this.setState({...this.state,Loading:true})
         axios({
             method:'POST',
-            url:'http://localhost:8080/user/addTask',
+            url:'http://localhost:5000/user/addTask',
             headers:{
                 "Content-Type": "application/json",
                 'Accept': "application/json",
@@ -166,7 +156,7 @@ class Home extends Component{
          this.setState({...this.state,Loading:true})
          axios({
              method:'PUT',
-             url:`http://localhost:8080/user/task/${this.state.selectedTask.id}/update`,
+             url:`http://localhost:5000/user/task/${this.state.selectedTask.id}/update`,
              headers:{
                  "Content-Type": "application/json",
                  'Accept': "application/json",
@@ -211,7 +201,7 @@ class Home extends Component{
         this.setState({...this.state,Loading:true})
         axios({
             method:'DELETE',
-            url:`http://localhost:8080/user/task/${id}/delete`,
+            url:`http://localhost:5000/user/task/${id}/delete`,
             headers:{
                 "Content-Type": "application/json",
                 'Accept': "application/json",
@@ -310,21 +300,22 @@ class Home extends Component{
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div className="mt-3 ">
-                                            {/*<button onClick={()=>this.logout()} style={{cursor:'pointer'}} href="/login">Log Out</button>*/}
-                                            <button style={{cursor:'pointer'}}>
-                                            <Link to="/login" style={{textDecoration:'none',fontSize:'12px'}} onClick={()=>this.logout()}>Log Out</Link>
-                                            </button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <Footer/>
                         </>
                 }
             </>
         )
     }
+
+    static logout() {
+            const cookie=new Cookies();
+            cookie.set('access_token',"", { path: '/' });
+            cookie.set('userName', "", { path: '/' });
+            cookie.set('email', "", { path: '/' });
+            window.location="/login";
+        };
 }
 
 export default Home;

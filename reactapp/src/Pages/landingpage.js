@@ -1,40 +1,19 @@
-import React, { useState} from "react";
+import React from "react";
 import '../css/landingpage.css';
-//import { useSelector, useDispatch } from "react-redux";
-
-import { Link } from "react-router-dom";
-
-    const randomEmoji =
-        `😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋
-	 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫
-	 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫
-	 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧
-	 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 
-	 😻 😼 😽 🙀 😿 😾`.split(" ");
-
     function LandingPage() {
-        const [hi, setHi] = useState("👾");
         return (
-            <div align="center">
+            <div align="center" style={{
+                justifyContent: 'center',
+                height: '75vh'
+            }}>
+                <br/>
                 <h1>Task Management Website</h1>
-                <button
-                    className="NotLoggedIcon"
-                    onClick={() => {
-                        setHi(
-                            randomEmoji[
-                                Math.floor(Math.random() * randomEmoji.length)
-                                ]
-                        );
-                    }}
-                >
-                    <p>{hi}</p>
-                </button><br/>
-                <button style={{cursor:'pointer'}} className="loginButton">
-                    <Link to="/login" style={{textDecoration:'none',fontSize:'12px'}}>Login</Link>
-                </button>
-                <button style={{cursor:'pointer'}} className="registerButton">
-                    <Link to="/signup" style={{textDecoration:'none',fontSize:'12px'}}>Register</Link>
-                </button>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h4>A task management for users to track their progress of various tasks they wish to track. Users can log in and view, modify and delete the tasks they have added.</h4>
+                <h4>This application is developed using springboot framework and reactJS.</h4>
             </div>
         );
 }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 //import Logo from '../Components/logo';
 import '../css/signup.css';
-import { FaUserCircle } from "react-icons/fa";
+/*import { FaUserCircle } from "react-icons/fa";
 import {HiOutlineMail} from "react-icons/hi";
-import { AiOutlineLock } from "react-icons/ai";
+import { AiOutlineLock } from "react-icons/ai";*/
 import { Link } from 'react-router-dom';
 import {ReactNotifications} from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
@@ -43,7 +43,7 @@ class SignUp extends Component {
             this.setState({...this.state,loading:true});
             axios({
                 method:'POST',
-                url:'http://localhost:8080/user/signup',
+                url:'http://localhost:5000/user/signup',
                 headers:{
                     'content-type':'application/json',
                     'accept':'*/*'
@@ -91,9 +91,14 @@ class SignUp extends Component {
                         <ReactNotifications isMobile='true' breakpoint='700px'/>
                         <div className="container d-flex justify-content-center" style={{height:'100vh'}}>
                             <div className="bg-white p-5" style={{height:'fitContent',borderRadius:"40px"}}>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
                                 <div className="mt-3 mb-5 text-center">
                                     <h1 className="login-title">Create a new account</h1>
-                                    <p className="mt-3 text-muted mplus">Create an account to manage your tasks </p>
                                 </div>
                                 <form className="mt-4" onSubmit={this.onsubmitForm}>
                                     <div className="row mx-0 px-0">
@@ -103,7 +108,7 @@ class SignUp extends Component {
                                                     UserName
                                                 </label>
                                                 <div>
-                                                    < FaUserCircle className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
+                                                    {/*< FaUserCircle className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                                     <input type="text" value={this.state.userName} onChange={(e)=>this.setState({...this.state,userName:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter username" />
                                                 </div>
                                             </div>
@@ -116,7 +121,7 @@ class SignUp extends Component {
                                                     Email
                                                 </label>
                                                 <div>
-                                                    < HiOutlineMail className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
+                                                    {/*< HiOutlineMail className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                                     <input type="email" value={this.state.email} onChange={(e)=>this.setState({...this.state,email:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
                                                 </div>
                                             </div>
@@ -127,7 +132,7 @@ class SignUp extends Component {
                                             Password
                                         </label>
                                         <div>
-                                            < AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
+                                            {/*< AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                             <input type="password" value={this.state.password} onChange={(e)=>this.setState({...this.state,password:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter your password" />
                                         </div>
                                     </div>
@@ -137,7 +142,7 @@ class SignUp extends Component {
                                             Confirm Password
                                         </label>
                                         <div>
-                                            < AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
+                                            {/*< AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                             <input type="password" value={this.state.confirmPassword} onChange={(e)=>this.setState({...this.state,confirmPassword:e.target.value})} className="form-control ps-5 py-3 shadow-none" placeholder="Enter your password" />
                                         </div>
                                     </div>

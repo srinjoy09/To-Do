@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 //import Logo from '../Components/logo';
 import '../css/signin.css';
-import { FaUserCircle } from "react-icons/fa";
-import { AiOutlineLock } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import {ReactNotifications} from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
@@ -38,7 +36,7 @@ class Login extends Component {
             formData.append('password', this.state.password);
             axios({
                 method:'POST',
-                url:'http://localhost:8080/user/login',
+                url:'http://localhost:5000/user/login',
                 /*headers:{
                     'content-type':'application/json',
                     'accept':'application/json',
@@ -94,17 +92,24 @@ class Login extends Component {
                         <ReactNotifications isMobile='true' breakpoint='700px'/>
                         <div className="container d-flex justify-content-center align-items-center" style={{height:'100vh'}}>
                             <div className="bg-white p-5" style={{height:'fitContent',borderRadius:"40px"}}>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
                                 <div className="mt-5">
                                     <h1 className="login-title">Log in to your account</h1>
-                                    <p className="mt-3 text-muted mplus" style={{maxWidth:'400px'}}>Log in now to access all your tasks.</p>
                                 </div>
                                 <form className="mt-4" onSubmit={this.onSubmitForm}>
                                     <div className="form-group">
                                         <label className="control-label mplus text-muted mb-2" style={{fontSize:'13px'}}>
-                                            Email
+                                            Email  {/*< FaUserCircle className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                         </label>
                                         <div>
-                                            < FaUserCircle className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
                                             <input type="email" value={this.state.email} onChange={(e)=>this.setState({...this.state,email:e.target.value})} className="form-control ps-5 py-3 shadow-none" name="username" placeholder="Enter Email" />
                                         </div>
                                     </div>
@@ -113,7 +118,7 @@ class Login extends Component {
                                             Password
                                         </label>
                                         <div>
-                                            < AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>
+                                            {/*< AiOutlineLock className="position-absolute mt-3 ms-3 text-muted" style={{fontSize:'26px'}}/>*/}
                                             <input type="password" value={this.state.password} onChange={(e)=>this.setState({...this.state,password:e.target.value})} className="form-control ps-5 py-3  shadow-none" name="password" placeholder="Enter password" />
                                         </div>
                                     </div>
