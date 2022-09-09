@@ -1,11 +1,9 @@
 import Cookies from 'universal-cookie';
 const isAuthenticated = () => {
     const cookies=new Cookies();
-    const StoredCookiee=cookies.get('access_token');
-    if(StoredCookiee===""){
-        return false;
-    }
-    return true;
+    const StoredCookie=cookies.get('access_token');
+    return StoredCookie !== "";
+
 };
 
 export default isAuthenticated;
