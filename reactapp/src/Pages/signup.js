@@ -56,6 +56,7 @@ class SignUp extends Component {
             })
                 .then(res=>{
                     this.setState({...this.state,loading:false});
+
                     res.data.accessToken!==""?
                         Notification({
                             title:'Successful',
@@ -71,9 +72,10 @@ class SignUp extends Component {
                 .catch(err=>
                 {
                     this.setState({...this.state,loading:false});
+                    console.log(err);
                     Notification({
                         title:'Error',
-                        message:"Failed to Sign Up!",
+                        message:err.response.data,
                         type:'danger'
                     })});
         }
