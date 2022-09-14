@@ -196,7 +196,7 @@ class Home extends Component{
 
     ///Delete Task/////
 
-    DeleteUser=(id)=>{
+    DeleteTask=(id)=>{
         const cookie=new Cookies();
         this.setState({...this.state,Loading:true})
         axios({
@@ -293,7 +293,7 @@ class Home extends Component{
 
                                                             <td><MdBuild onClick={()=>this.SetModal(task,'edit','Edit Task')} style={{cursor:'pointer'}}/></td>
 
-                                                            <td><MdDeleteForever onClick={()=>this.DeleteUser(task.id)} style={{cursor:'pointer'}}/></td>
+                                                            <td><MdDeleteForever onClick={()=>this.DeleteTask(task.id)} style={{cursor:'pointer'}}/></td>
                                                         </tr>
                                                     )
                                                 }
